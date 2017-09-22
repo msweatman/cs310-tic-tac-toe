@@ -101,11 +101,13 @@ public class TicTacToeModel{
 			if(grid[row][col] == Mark.EMPTY) {
 				if(xTurn) {
 					grid[row][col] = Mark.X;
-					return xTurn = false;
+					xTurn = false;
+					return true;
 				}
 				else {
 					grid[row][col] = Mark.O;
-					return xTurn = true;
+					xTurn = true;
+					return true;
 				}
 			}
 		}
