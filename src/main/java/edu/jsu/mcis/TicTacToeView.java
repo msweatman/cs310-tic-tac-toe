@@ -24,14 +24,15 @@ public class TicTacToeView {
 		for(int i = 0; i < model.getWidth(); i++) {
 			firstRow = firstRow + i;
 		}
-		System.out.println(firstRow);
+		System.out.println("\n" + firstRow + "\n");
 		for(int i = 0; i < model.getWidth(); i++) {
-			rows[i] = " " + i;
+			rows[i] = "" + i;
 			for(int j = 0; j < model.getWidth(); j++) {
 				rows[i] = rows[i] + model.getMark(i, j);
 			}
 			System.out.println(rows[i]);
 		}
+		System.out.println("\n");
 
     }
 
@@ -42,9 +43,9 @@ public class TicTacToeView {
         /* INSERT YOUR CODE HERE */
 		
 		if(model.isXTurn() == true) {
-			System.out.println("Player X's turn: ");
+			System.out.println("Player 1 (X) Move: " + "\n" + "Enter the row and column numbers, separated by a space: ");
 		}
-		else System.out.println("Player O's turn: ");
+		else System.out.println("Player 2 (O) Move: " + "\n" + "Enter the row and column numbers, separated by a space: ");
 
     }
 

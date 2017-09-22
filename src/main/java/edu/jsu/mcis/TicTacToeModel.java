@@ -218,12 +218,14 @@ public class TicTacToeModel{
 					return true;
 				}
 			}
-			/* for(int i = width; i > 0; i--) {
+			for(int i = 0; i < width; i++) {
 				if(grid[i][(width - 1) - i] != mark) { // diagonal right to left
 					break;
 				} 
-				else return true;
-			} */
+				if(i == width - 1) {
+					return true;
+				}
+			}
 
         return false; /* remove this line! */
 	
