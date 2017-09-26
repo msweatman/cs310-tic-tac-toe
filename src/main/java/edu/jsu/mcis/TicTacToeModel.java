@@ -111,10 +111,6 @@ public class TicTacToeModel{
 				}
 			}
 		}
-		
-		/* if(isSquareMarked == true) {
-			
-		} */
 
         return false; /* remove this line! */
         

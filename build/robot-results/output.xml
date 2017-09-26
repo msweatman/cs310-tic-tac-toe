@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0 (Jython 2.7.0 on java1.8.0_101)" generated="20170922 11:54:56.390">
+<robot generator="Robot 3.0 (Jython 2.7.0 on java1.8.0_101)" generated="20170925 22:14:19.077">
 <suite source="C:\Users\Morgan\Desktop\cs310-tic-tac-toe\src\test\acceptancetest" name="Acceptancetest" id="s1">
-<suite source="C:\Users\Morgan\Desktop\cs310-tic-tac-toe\src\test\acceptancetest\TicTacToeTests.robot" name="TicTacToeTests" id="s1-s1">
+<suite source="C:\Users\Morgan\Desktop\cs310-tic-tac-toe\src\test\acceptancetest\TicTacToeGUITests.robot" name="TicTacToeGUITests" id="s1-s1">
 <test name="Win Diagonally as X" id="s1-s1-t1">
-<kw library="keywords.TicTacToeKeywords" name="Start New Game">
-<status endtime="20170922 11:54:57.187" starttime="20170922 11:54:57.172" status="PASS"></status>
+<kw name="Start New Game">
+<kw library="SwingLibrary" name="Start Application">
+<doc>Alias for `Launch Application` keyword</doc>
+<arguments>
+<arg>edu.jsu.mcis.TicTacToe</arg>
+</arguments>
+<status endtime="20170925 22:14:27.314" starttime="20170925 22:14:21.751" status="PASS"></status>
 </kw>
-<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<kw library="SwingLibrary" name="Select Window">
+<doc>Selects a window as current context and sets focus to it.</doc>
+<arguments>
+<arg>Tic-Tac-Toe</arg>
+</arguments>
+<status endtime="20170925 22:14:28.283" starttime="20170925 22:14:27.408" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:28.299" starttime="20170925 22:14:21.751" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:57.187" starttime="20170922 11:54:57.187" status="PASS"></status>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.314">${component} = Square11</msg>
+<status endtime="20170925 22:14:28.314" starttime="20170925 22:14:28.299" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:28.471" starttime="20170925 22:14:28.330" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:28.471" starttime="20170925 22:14:28.299" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -19,33 +54,68 @@
 <arg>1</arg>
 <arg>X</arg>
 </arguments>
-<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
 <arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
 <arg>${row}</arg>
 <arg>${col}</arg>
 </arguments>
 <assign>
-<var>${m}</var>
+<var>${component}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.218">${m} = X</msg>
-<status endtime="20170922 11:54:57.218" starttime="20170922 11:54:57.203" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:28.502">${component} = Square11</msg>
+<status endtime="20170925 22:14:28.502" starttime="20170925 22:14:28.486" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.580">${text} = X</msg>
+<status endtime="20170925 22:14:28.580" starttime="20170925 22:14:28.502" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${m}</arg>
+<arg>${text}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.234" starttime="20170922 11:54:57.218" status="PASS"></status>
+<status endtime="20170925 22:14:28.596" starttime="20170925 22:14:28.596" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.234" starttime="20170922 11:54:57.203" status="PASS"></status>
+<status endtime="20170925 22:14:28.596" starttime="20170925 22:14:28.471" status="PASS"></status>
 </kw>
-<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<kw name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:57.250" starttime="20170922 11:54:57.250" status="PASS"></status>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.627">${component} = Square01</msg>
+<status endtime="20170925 22:14:28.627" starttime="20170925 22:14:28.611" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:28.674" starttime="20170925 22:14:28.627" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:28.674" starttime="20170925 22:14:28.611" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -53,33 +123,68 @@
 <arg>1</arg>
 <arg>O</arg>
 </arguments>
-<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
 <arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
 <arg>${row}</arg>
 <arg>${col}</arg>
 </arguments>
 <assign>
-<var>${m}</var>
+<var>${component}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.281">${m} = O</msg>
-<status endtime="20170922 11:54:57.281" starttime="20170922 11:54:57.265" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:28.689">${component} = Square01</msg>
+<status endtime="20170925 22:14:28.689" starttime="20170925 22:14:28.689" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.721">${text} = O</msg>
+<status endtime="20170925 22:14:28.721" starttime="20170925 22:14:28.705" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${m}</arg>
+<arg>${text}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.297" starttime="20170922 11:54:57.281" status="PASS"></status>
+<status endtime="20170925 22:14:28.736" starttime="20170925 22:14:28.721" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.297" starttime="20170922 11:54:57.250" status="PASS"></status>
+<status endtime="20170925 22:14:28.736" starttime="20170925 22:14:28.689" status="PASS"></status>
 </kw>
-<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<kw name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>0</arg>
 </arguments>
-<status endtime="20170922 11:54:57.312" starttime="20170922 11:54:57.312" status="PASS"></status>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.752">${component} = Square00</msg>
+<status endtime="20170925 22:14:28.767" starttime="20170925 22:14:28.752" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:28.783" starttime="20170925 22:14:28.767" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:28.799" starttime="20170925 22:14:28.736" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -87,33 +192,68 @@
 <arg>0</arg>
 <arg>X</arg>
 </arguments>
-<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
 <arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
 <arg>${row}</arg>
 <arg>${col}</arg>
 </arguments>
 <assign>
-<var>${m}</var>
+<var>${component}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.343">${m} = X</msg>
-<status endtime="20170922 11:54:57.343" starttime="20170922 11:54:57.328" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:28.814">${component} = Square00</msg>
+<status endtime="20170925 22:14:28.814" starttime="20170925 22:14:28.799" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.830">${text} = X</msg>
+<status endtime="20170925 22:14:28.846" starttime="20170925 22:14:28.814" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${m}</arg>
+<arg>${text}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.359" starttime="20170922 11:54:57.343" status="PASS"></status>
+<status endtime="20170925 22:14:28.846" starttime="20170925 22:14:28.846" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.359" starttime="20170922 11:54:57.312" status="PASS"></status>
+<status endtime="20170925 22:14:28.861" starttime="20170925 22:14:28.799" status="PASS"></status>
 </kw>
-<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<kw name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>2</arg>
 </arguments>
-<status endtime="20170922 11:54:57.375" starttime="20170922 11:54:57.375" status="PASS"></status>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.877">${component} = Square02</msg>
+<status endtime="20170925 22:14:28.877" starttime="20170925 22:14:28.861" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:28.908" starttime="20170925 22:14:28.877" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:28.908" starttime="20170925 22:14:28.861" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -121,33 +261,68 @@
 <arg>2</arg>
 <arg>O</arg>
 </arguments>
-<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
 <arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
 <arg>${row}</arg>
 <arg>${col}</arg>
 </arguments>
 <assign>
-<var>${m}</var>
+<var>${component}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.422">${m} = O</msg>
-<status endtime="20170922 11:54:57.422" starttime="20170922 11:54:57.406" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:28.924">${component} = Square02</msg>
+<status endtime="20170925 22:14:28.924" starttime="20170925 22:14:28.908" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.939">${text} = O</msg>
+<status endtime="20170925 22:14:28.939" starttime="20170925 22:14:28.924" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${m}</arg>
+<arg>${text}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.437" starttime="20170922 11:54:57.437" status="PASS"></status>
+<status endtime="20170925 22:14:28.955" starttime="20170925 22:14:28.955" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.453" starttime="20170922 11:54:57.375" status="PASS"></status>
+<status endtime="20170925 22:14:28.955" starttime="20170925 22:14:28.908" status="PASS"></status>
 </kw>
-<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<kw name="Mark Location">
 <arguments>
 <arg>2</arg>
 <arg>2</arg>
 </arguments>
-<status endtime="20170922 11:54:57.468" starttime="20170922 11:54:57.453" status="PASS"></status>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:28.971">${component} = Square22</msg>
+<status endtime="20170925 22:14:28.971" starttime="20170925 22:14:28.971" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.002" starttime="20170925 22:14:28.986" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.002" starttime="20170925 22:14:28.955" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -155,60 +330,1227 @@
 <arg>2</arg>
 <arg>X</arg>
 </arguments>
-<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
 <arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
 <arg>${row}</arg>
 <arg>${col}</arg>
 </arguments>
 <assign>
-<var>${m}</var>
+<var>${component}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.484">${m} = X</msg>
-<status endtime="20170922 11:54:57.500" starttime="20170922 11:54:57.484" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:29.033">${component} = Square22</msg>
+<status endtime="20170925 22:14:29.033" starttime="20170925 22:14:29.017" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.049">${text} = X</msg>
+<status endtime="20170925 22:14:29.049" starttime="20170925 22:14:29.033" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${m}</arg>
+<arg>${text}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.500" starttime="20170922 11:54:57.500" status="PASS"></status>
+<status endtime="20170925 22:14:29.064" starttime="20170925 22:14:29.049" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.515" starttime="20170922 11:54:57.468" status="PASS"></status>
+<status endtime="20170925 22:14:29.064" starttime="20170925 22:14:29.002" status="PASS"></status>
 </kw>
 <kw name="Winner Should Be">
 <arguments>
 <arg>X</arg>
 </arguments>
-<kw library="keywords.TicTacToeKeywords" name="Get Winner">
+<kw library="SwingLibrary" name="Get Label Content">
+<doc>Returns the text displayed on a label.</doc>
+<arguments>
+<arg>ResultLabel</arg>
+</arguments>
 <assign>
-<var>${m}</var>
+<var>${text}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.531">${m} = X</msg>
-<status endtime="20170922 11:54:57.531" starttime="20170922 11:54:57.515" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:29.221">${text} = X</msg>
+<status endtime="20170925 22:14:29.221" starttime="20170925 22:14:29.064" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>${m}</arg>
-<arg>${mark}</arg>
+<arg>${text}</arg>
+<arg>${winner}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.547" starttime="20170922 11:54:57.531" status="PASS"></status>
+<status endtime="20170925 22:14:29.236" starttime="20170925 22:14:29.221" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.547" starttime="20170922 11:54:57.515" status="PASS"></status>
+<kw library="SwingLibrary" name="Close Window">
+<doc>Closes a window.</doc>
+<arguments>
+<arg>Tic-Tac-Toe</arg>
+</arguments>
+<status endtime="20170925 22:14:29.455" starttime="20170925 22:14:29.236" status="PASS"></status>
 </kw>
-<status critical="yes" endtime="20170922 11:54:57.547" starttime="20170922 11:54:57.156" status="PASS"></status>
+<status endtime="20170925 22:14:29.455" starttime="20170925 22:14:29.064" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20170925 22:14:29.455" starttime="20170925 22:14:21.735" status="PASS"></status>
 </test>
 <test name="Win Horizontally as O" id="s1-s1-t2">
+<kw name="Start New Game">
+<kw library="SwingLibrary" name="Start Application">
+<doc>Alias for `Launch Application` keyword</doc>
+<arguments>
+<arg>edu.jsu.mcis.TicTacToe</arg>
+</arguments>
+<status endtime="20170925 22:14:29.502" starttime="20170925 22:14:29.486" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Select Window">
+<doc>Selects a window as current context and sets focus to it.</doc>
+<arguments>
+<arg>Tic-Tac-Toe</arg>
+</arguments>
+<status endtime="20170925 22:14:29.533" starttime="20170925 22:14:29.517" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.533" starttime="20170925 22:14:29.471" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.549">${component} = Square11</msg>
+<status endtime="20170925 22:14:29.549" starttime="20170925 22:14:29.549" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.596" starttime="20170925 22:14:29.564" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.596" starttime="20170925 22:14:29.549" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.611">${component} = Square11</msg>
+<status endtime="20170925 22:14:29.611" starttime="20170925 22:14:29.596" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.627">${text} = X</msg>
+<status endtime="20170925 22:14:29.627" starttime="20170925 22:14:29.611" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.642" starttime="20170925 22:14:29.627" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.642" starttime="20170925 22:14:29.596" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.658">${component} = Square20</msg>
+<status endtime="20170925 22:14:29.658" starttime="20170925 22:14:29.642" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.674" starttime="20170925 22:14:29.658" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.674" starttime="20170925 22:14:29.642" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+<arg>O</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.689">${component} = Square20</msg>
+<status endtime="20170925 22:14:29.689" starttime="20170925 22:14:29.689" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.721">${text} = O</msg>
+<status endtime="20170925 22:14:29.721" starttime="20170925 22:14:29.705" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.736" starttime="20170925 22:14:29.721" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.736" starttime="20170925 22:14:29.674" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.752">${component} = Square00</msg>
+<status endtime="20170925 22:14:29.752" starttime="20170925 22:14:29.736" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.767" starttime="20170925 22:14:29.752" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.767" starttime="20170925 22:14:29.736" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.783">${component} = Square00</msg>
+<status endtime="20170925 22:14:29.783" starttime="20170925 22:14:29.783" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.799">${text} = X</msg>
+<status endtime="20170925 22:14:29.814" starttime="20170925 22:14:29.799" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.814" starttime="20170925 22:14:29.814" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.814" starttime="20170925 22:14:29.767" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.830">${component} = Square22</msg>
+<status endtime="20170925 22:14:29.846" starttime="20170925 22:14:29.830" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.861" starttime="20170925 22:14:29.846" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.861" starttime="20170925 22:14:29.830" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+<arg>O</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.877">${component} = Square22</msg>
+<status endtime="20170925 22:14:29.877" starttime="20170925 22:14:29.861" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.892">${text} = O</msg>
+<status endtime="20170925 22:14:29.892" starttime="20170925 22:14:29.877" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.892" starttime="20170925 22:14:29.892" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.908" starttime="20170925 22:14:29.861" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.908">${component} = Square02</msg>
+<status endtime="20170925 22:14:29.908" starttime="20170925 22:14:29.908" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.924" starttime="20170925 22:14:29.924" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.939" starttime="20170925 22:14:29.908" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.939">${component} = Square02</msg>
+<status endtime="20170925 22:14:29.939" starttime="20170925 22:14:29.939" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.955">${text} = X</msg>
+<status endtime="20170925 22:14:29.955" starttime="20170925 22:14:29.939" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:29.971" starttime="20170925 22:14:29.955" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:29.971" starttime="20170925 22:14:29.939" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:29.986">${component} = Square21</msg>
+<status endtime="20170925 22:14:29.986" starttime="20170925 22:14:29.971" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.002" starttime="20170925 22:14:29.986" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.002" starttime="20170925 22:14:29.971" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+<arg>O</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.017">${component} = Square21</msg>
+<status endtime="20170925 22:14:30.017" starttime="20170925 22:14:30.017" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.033">${text} = O</msg>
+<status endtime="20170925 22:14:30.049" starttime="20170925 22:14:30.017" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.049" starttime="20170925 22:14:30.049" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.049" starttime="20170925 22:14:30.002" status="PASS"></status>
+</kw>
+<kw name="Winner Should Be">
+<arguments>
+<arg>O</arg>
+</arguments>
+<kw library="SwingLibrary" name="Get Label Content">
+<doc>Returns the text displayed on a label.</doc>
+<arguments>
+<arg>ResultLabel</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.080">${text} = O</msg>
+<status endtime="20170925 22:14:30.080" starttime="20170925 22:14:30.064" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${winner}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.080" starttime="20170925 22:14:30.080" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Close Window">
+<doc>Closes a window.</doc>
+<arguments>
+<arg>Tic-Tac-Toe</arg>
+</arguments>
+<status endtime="20170925 22:14:30.256" starttime="20170925 22:14:30.096" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.256" starttime="20170925 22:14:30.049" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20170925 22:14:30.256" starttime="20170925 22:14:29.471" status="PASS"></status>
+</test>
+<test name="Force a Tie" id="s1-s1-t3">
+<kw name="Start New Game">
+<kw library="SwingLibrary" name="Start Application">
+<doc>Alias for `Launch Application` keyword</doc>
+<arguments>
+<arg>edu.jsu.mcis.TicTacToe</arg>
+</arguments>
+<status endtime="20170925 22:14:30.334" starttime="20170925 22:14:30.287" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Select Window">
+<doc>Selects a window as current context and sets focus to it.</doc>
+<arguments>
+<arg>Tic-Tac-Toe</arg>
+</arguments>
+<status endtime="20170925 22:14:30.366" starttime="20170925 22:14:30.334" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.366" starttime="20170925 22:14:30.272" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.381">${component} = Square11</msg>
+<status endtime="20170925 22:14:30.381" starttime="20170925 22:14:30.366" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.412" starttime="20170925 22:14:30.381" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.412" starttime="20170925 22:14:30.366" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.428">${component} = Square11</msg>
+<status endtime="20170925 22:14:30.428" starttime="20170925 22:14:30.428" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.444">${text} = X</msg>
+<status endtime="20170925 22:14:30.444" starttime="20170925 22:14:30.428" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.459" starttime="20170925 22:14:30.444" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.459" starttime="20170925 22:14:30.412" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.475">${component} = Square00</msg>
+<status endtime="20170925 22:14:30.475" starttime="20170925 22:14:30.459" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.491" starttime="20170925 22:14:30.475" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.491" starttime="20170925 22:14:30.459" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+<arg>O</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.522">${component} = Square00</msg>
+<status endtime="20170925 22:14:30.522" starttime="20170925 22:14:30.506" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.537">${text} = O</msg>
+<status endtime="20170925 22:14:30.537" starttime="20170925 22:14:30.522" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.537" starttime="20170925 22:14:30.537" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.553" starttime="20170925 22:14:30.506" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.553">${component} = Square20</msg>
+<status endtime="20170925 22:14:30.569" starttime="20170925 22:14:30.553" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.584" starttime="20170925 22:14:30.569" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.584" starttime="20170925 22:14:30.553" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.600">${component} = Square20</msg>
+<status endtime="20170925 22:14:30.600" starttime="20170925 22:14:30.600" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.616">${text} = X</msg>
+<status endtime="20170925 22:14:30.616" starttime="20170925 22:14:30.600" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.631" starttime="20170925 22:14:30.616" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.631" starttime="20170925 22:14:30.584" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.631">${component} = Square02</msg>
+<status endtime="20170925 22:14:30.647" starttime="20170925 22:14:30.631" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.678" starttime="20170925 22:14:30.647" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.678" starttime="20170925 22:14:30.631" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+<arg>O</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.694">${component} = Square02</msg>
+<status endtime="20170925 22:14:30.694" starttime="20170925 22:14:30.678" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.694">${text} = O</msg>
+<status endtime="20170925 22:14:30.694" starttime="20170925 22:14:30.694" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.709" starttime="20170925 22:14:30.709" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.709" starttime="20170925 22:14:30.678" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>1</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.725">${component} = Square01</msg>
+<status endtime="20170925 22:14:30.725" starttime="20170925 22:14:30.709" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.741" starttime="20170925 22:14:30.725" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.741" starttime="20170925 22:14:30.709" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.741">${component} = Square01</msg>
+<status endtime="20170925 22:14:30.756" starttime="20170925 22:14:30.741" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.772">${text} = X</msg>
+<status endtime="20170925 22:14:30.772" starttime="20170925 22:14:30.756" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.772" starttime="20170925 22:14:30.772" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.772" starttime="20170925 22:14:30.741" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.787">${component} = Square21</msg>
+<status endtime="20170925 22:14:30.787" starttime="20170925 22:14:30.787" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.803" starttime="20170925 22:14:30.787" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.803" starttime="20170925 22:14:30.787" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+<arg>O</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.819">${component} = Square21</msg>
+<status endtime="20170925 22:14:30.819" starttime="20170925 22:14:30.819" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.834">${text} = O</msg>
+<status endtime="20170925 22:14:30.834" starttime="20170925 22:14:30.819" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.834" starttime="20170925 22:14:30.834" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.834" starttime="20170925 22:14:30.803" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>2</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.850">${component} = Square12</msg>
+<status endtime="20170925 22:14:30.850" starttime="20170925 22:14:30.850" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.881" starttime="20170925 22:14:30.866" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.881" starttime="20170925 22:14:30.850" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.897">${component} = Square12</msg>
+<status endtime="20170925 22:14:30.897" starttime="20170925 22:14:30.897" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.928">${text} = X</msg>
+<status endtime="20170925 22:14:30.928" starttime="20170925 22:14:30.897" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.928" starttime="20170925 22:14:30.928" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.928" starttime="20170925 22:14:30.881" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>0</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.944">${component} = Square10</msg>
+<status endtime="20170925 22:14:30.944" starttime="20170925 22:14:30.944" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:30.975" starttime="20170925 22:14:30.959" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:30.975" starttime="20170925 22:14:30.944" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>0</arg>
+<arg>O</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:30.991">${component} = Square10</msg>
+<status endtime="20170925 22:14:30.991" starttime="20170925 22:14:30.975" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.006">${text} = O</msg>
+<status endtime="20170925 22:14:31.006" starttime="20170925 22:14:30.991" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.037" starttime="20170925 22:14:31.037" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.053" starttime="20170925 22:14:30.975" status="PASS"></status>
+</kw>
+<kw name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.053">${component} = Square22</msg>
+<status endtime="20170925 22:14:31.053" starttime="20170925 22:14:31.053" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Click On Component">
+<doc>Clicks on a component.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.069" starttime="20170925 22:14:31.053" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.069" starttime="20170925 22:14:31.053" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>Square</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${component}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.084">${component} = Square22</msg>
+<status endtime="20170925 22:14:31.084" starttime="20170925 22:14:31.084" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Get Button Text">
+<doc>Uses current context to search for a button and when found, returns the text it is labeled with.</doc>
+<arguments>
+<arg>${component}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.100">${text} = X</msg>
+<status endtime="20170925 22:14:31.100" starttime="20170925 22:14:31.084" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.100" starttime="20170925 22:14:31.100" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.116" starttime="20170925 22:14:31.084" status="PASS"></status>
+</kw>
+<kw name="Winner Should Be">
+<arguments>
+<arg>TIE</arg>
+</arguments>
+<kw library="SwingLibrary" name="Get Label Content">
+<doc>Returns the text displayed on a label.</doc>
+<arguments>
+<arg>ResultLabel</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.116">${text} = TIE</msg>
+<status endtime="20170925 22:14:31.131" starttime="20170925 22:14:31.116" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${winner}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.131" starttime="20170925 22:14:31.131" status="PASS"></status>
+</kw>
+<kw library="SwingLibrary" name="Close Window">
+<doc>Closes a window.</doc>
+<arguments>
+<arg>Tic-Tac-Toe</arg>
+</arguments>
+<status endtime="20170925 22:14:31.303" starttime="20170925 22:14:31.131" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.303" starttime="20170925 22:14:31.116" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20170925 22:14:31.303" starttime="20170925 22:14:30.256" status="PASS"></status>
+</test>
+<status endtime="20170925 22:14:31.334" starttime="20170925 22:14:19.609" status="PASS"></status>
+</suite>
+<suite source="C:\Users\Morgan\Desktop\cs310-tic-tac-toe\src\test\acceptancetest\TicTacToeTests.robot" name="TicTacToeTests" id="s1-s2">
+<test name="Win Diagonally as X" id="s1-s2-t1">
 <kw library="keywords.TicTacToeKeywords" name="Start New Game">
-<status endtime="20170922 11:54:57.562" starttime="20170922 11:54:57.562" status="PASS"></status>
+<status endtime="20170925 22:14:31.459" starttime="20170925 22:14:31.459" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:57.578" starttime="20170922 11:54:57.562" status="PASS"></status>
+<status endtime="20170925 22:14:31.459" starttime="20170925 22:14:31.459" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -224,8 +1566,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.593">${m} = X</msg>
-<status endtime="20170922 11:54:57.593" starttime="20170922 11:54:57.578" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.491">${m} = X</msg>
+<status endtime="20170925 22:14:31.491" starttime="20170925 22:14:31.475" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -233,21 +1575,21 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.609" starttime="20170922 11:54:57.593" status="PASS"></status>
+<status endtime="20170925 22:14:31.506" starttime="20170925 22:14:31.491" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.609" starttime="20170922 11:54:57.578" status="PASS"></status>
+<status endtime="20170925 22:14:31.506" starttime="20170925 22:14:31.475" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
-<arg>2</arg>
 <arg>0</arg>
+<arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:57.625" starttime="20170922 11:54:57.609" status="PASS"></status>
+<status endtime="20170925 22:14:31.506" starttime="20170925 22:14:31.506" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
-<arg>2</arg>
 <arg>0</arg>
+<arg>1</arg>
 <arg>O</arg>
 </arguments>
 <kw library="keywords.TicTacToeKeywords" name="Get Mark">
@@ -258,8 +1600,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.640">${m} = O</msg>
-<status endtime="20170922 11:54:57.640" starttime="20170922 11:54:57.625" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.522">${m} = O</msg>
+<status endtime="20170925 22:14:31.538" starttime="20170925 22:14:31.522" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -267,16 +1609,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.656" starttime="20170922 11:54:57.640" status="PASS"></status>
+<status endtime="20170925 22:14:31.538" starttime="20170925 22:14:31.538" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.656" starttime="20170922 11:54:57.625" status="PASS"></status>
+<status endtime="20170925 22:14:31.538" starttime="20170925 22:14:31.522" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>0</arg>
 </arguments>
-<status endtime="20170922 11:54:57.656" starttime="20170922 11:54:57.656" status="PASS"></status>
+<status endtime="20170925 22:14:31.553" starttime="20170925 22:14:31.553" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -292,8 +1634,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.687">${m} = X</msg>
-<status endtime="20170922 11:54:57.687" starttime="20170922 11:54:57.672" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.569">${m} = X</msg>
+<status endtime="20170925 22:14:31.569" starttime="20170925 22:14:31.553" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -301,16 +1643,213 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.687" starttime="20170922 11:54:57.687" status="PASS"></status>
+<status endtime="20170925 22:14:31.584" starttime="20170925 22:14:31.569" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.703" starttime="20170922 11:54:57.672" status="PASS"></status>
+<status endtime="20170925 22:14:31.584" starttime="20170925 22:14:31.553" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20170925 22:14:31.584" starttime="20170925 22:14:31.584" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.616">${m} = O</msg>
+<status endtime="20170925 22:14:31.616" starttime="20170925 22:14:31.600" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.616" starttime="20170925 22:14:31.616" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.616" starttime="20170925 22:14:31.600" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>2</arg>
 <arg>2</arg>
 </arguments>
-<status endtime="20170922 11:54:57.703" starttime="20170922 11:54:57.703" status="PASS"></status>
+<status endtime="20170925 22:14:31.631" starttime="20170925 22:14:31.616" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.647">${m} = X</msg>
+<status endtime="20170925 22:14:31.647" starttime="20170925 22:14:31.631" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.647" starttime="20170925 22:14:31.647" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.663" starttime="20170925 22:14:31.631" status="PASS"></status>
+</kw>
+<kw name="Winner Should Be">
+<arguments>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Winner">
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.678">${m} = X</msg>
+<status endtime="20170925 22:14:31.678" starttime="20170925 22:14:31.663" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.678" starttime="20170925 22:14:31.678" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.678" starttime="20170925 22:14:31.663" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20170925 22:14:31.678" starttime="20170925 22:14:31.444" status="PASS"></status>
+</test>
+<test name="Win Horizontally as O" id="s1-s2-t2">
+<kw library="keywords.TicTacToeKeywords" name="Start New Game">
+<status endtime="20170925 22:14:31.694" starttime="20170925 22:14:31.694" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20170925 22:14:31.709" starttime="20170925 22:14:31.694" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.709">${m} = X</msg>
+<status endtime="20170925 22:14:31.725" starttime="20170925 22:14:31.709" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.725" starttime="20170925 22:14:31.725" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.725" starttime="20170925 22:14:31.709" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20170925 22:14:31.741" starttime="20170925 22:14:31.725" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.756">${m} = O</msg>
+<status endtime="20170925 22:14:31.756" starttime="20170925 22:14:31.741" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.756" starttime="20170925 22:14:31.756" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.756" starttime="20170925 22:14:31.741" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20170925 22:14:31.772" starttime="20170925 22:14:31.772" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20170925 22:14:31.788">${m} = X</msg>
+<status endtime="20170925 22:14:31.788" starttime="20170925 22:14:31.772" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20170925 22:14:31.788" starttime="20170925 22:14:31.788" status="PASS"></status>
+</kw>
+<status endtime="20170925 22:14:31.788" starttime="20170925 22:14:31.772" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20170925 22:14:31.803" starttime="20170925 22:14:31.803" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -326,8 +1865,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.718">${m} = O</msg>
-<status endtime="20170922 11:54:57.734" starttime="20170922 11:54:57.718" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.819">${m} = O</msg>
+<status endtime="20170925 22:14:31.819" starttime="20170925 22:14:31.819" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -335,16 +1874,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.734" starttime="20170922 11:54:57.734" status="PASS"></status>
+<status endtime="20170925 22:14:31.834" starttime="20170925 22:14:31.819" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.750" starttime="20170922 11:54:57.703" status="PASS"></status>
+<status endtime="20170925 22:14:31.834" starttime="20170925 22:14:31.819" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>2</arg>
 </arguments>
-<status endtime="20170922 11:54:57.750" starttime="20170922 11:54:57.750" status="PASS"></status>
+<status endtime="20170925 22:14:31.834" starttime="20170925 22:14:31.834" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -360,8 +1899,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.765">${m} = X</msg>
-<status endtime="20170922 11:54:57.765" starttime="20170922 11:54:57.765" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.850">${m} = X</msg>
+<status endtime="20170925 22:14:31.850" starttime="20170925 22:14:31.850" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -369,16 +1908,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.781" starttime="20170922 11:54:57.781" status="PASS"></status>
+<status endtime="20170925 22:14:31.866" starttime="20170925 22:14:31.866" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.781" starttime="20170922 11:54:57.750" status="PASS"></status>
+<status endtime="20170925 22:14:31.866" starttime="20170925 22:14:31.850" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>2</arg>
 <arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:57.797" starttime="20170922 11:54:57.797" status="PASS"></status>
+<status endtime="20170925 22:14:31.866" starttime="20170925 22:14:31.866" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -394,8 +1933,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.812">${m} = O</msg>
-<status endtime="20170922 11:54:57.812" starttime="20170922 11:54:57.812" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.881">${m} = O</msg>
+<status endtime="20170925 22:14:31.897" starttime="20170925 22:14:31.881" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -403,9 +1942,9 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.828" starttime="20170922 11:54:57.812" status="PASS"></status>
+<status endtime="20170925 22:14:31.897" starttime="20170925 22:14:31.897" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.828" starttime="20170922 11:54:57.797" status="PASS"></status>
+<status endtime="20170925 22:14:31.897" starttime="20170925 22:14:31.881" status="PASS"></status>
 </kw>
 <kw name="Winner Should Be">
 <arguments>
@@ -415,8 +1954,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.843">${m} = O</msg>
-<status endtime="20170922 11:54:57.843" starttime="20170922 11:54:57.843" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.913">${m} = O</msg>
+<status endtime="20170925 22:14:31.913" starttime="20170925 22:14:31.913" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -424,22 +1963,22 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.859" starttime="20170922 11:54:57.843" status="PASS"></status>
+<status endtime="20170925 22:14:31.928" starttime="20170925 22:14:31.913" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.859" starttime="20170922 11:54:57.828" status="PASS"></status>
+<status endtime="20170925 22:14:31.928" starttime="20170925 22:14:31.897" status="PASS"></status>
 </kw>
-<status critical="yes" endtime="20170922 11:54:57.859" starttime="20170922 11:54:57.547" status="PASS"></status>
+<status critical="yes" endtime="20170925 22:14:31.928" starttime="20170925 22:14:31.694" status="PASS"></status>
 </test>
-<test name="Force a Tie" id="s1-s1-t3">
+<test name="Force a Tie" id="s1-s2-t3">
 <kw library="keywords.TicTacToeKeywords" name="Start New Game">
-<status endtime="20170922 11:54:57.875" starttime="20170922 11:54:57.875" status="PASS"></status>
+<status endtime="20170925 22:14:31.944" starttime="20170925 22:14:31.944" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:57.890" starttime="20170922 11:54:57.875" status="PASS"></status>
+<status endtime="20170925 22:14:31.959" starttime="20170925 22:14:31.944" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -455,8 +1994,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.906">${m} = X</msg>
-<status endtime="20170922 11:54:57.906" starttime="20170922 11:54:57.906" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:31.959">${m} = X</msg>
+<status endtime="20170925 22:14:31.959" starttime="20170925 22:14:31.959" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -464,16 +2003,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.922" starttime="20170922 11:54:57.922" status="PASS"></status>
+<status endtime="20170925 22:14:31.975" starttime="20170925 22:14:31.975" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.937" starttime="20170922 11:54:57.890" status="PASS"></status>
+<status endtime="20170925 22:14:31.975" starttime="20170925 22:14:31.959" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>0</arg>
 </arguments>
-<status endtime="20170922 11:54:57.937" starttime="20170922 11:54:57.937" status="PASS"></status>
+<status endtime="20170925 22:14:31.991" starttime="20170925 22:14:31.975" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -489,8 +2028,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:57.953">${m} = O</msg>
-<status endtime="20170922 11:54:57.968" starttime="20170922 11:54:57.953" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.006">${m} = O</msg>
+<status endtime="20170925 22:14:32.006" starttime="20170925 22:14:31.991" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -498,16 +2037,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:57.968" starttime="20170922 11:54:57.968" status="PASS"></status>
+<status endtime="20170925 22:14:32.022" starttime="20170925 22:14:32.022" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:57.984" starttime="20170922 11:54:57.937" status="PASS"></status>
+<status endtime="20170925 22:14:32.022" starttime="20170925 22:14:31.991" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>2</arg>
 <arg>0</arg>
 </arguments>
-<status endtime="20170922 11:54:57.984" starttime="20170922 11:54:57.984" status="PASS"></status>
+<status endtime="20170925 22:14:32.038" starttime="20170925 22:14:32.022" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -523,8 +2062,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.015">${m} = X</msg>
-<status endtime="20170922 11:54:58.015" starttime="20170922 11:54:58.000" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.053">${m} = X</msg>
+<status endtime="20170925 22:14:32.053" starttime="20170925 22:14:32.038" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -532,16 +2071,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.015" starttime="20170922 11:54:58.015" status="PASS"></status>
+<status endtime="20170925 22:14:32.069" starttime="20170925 22:14:32.053" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.031" starttime="20170922 11:54:57.984" status="PASS"></status>
+<status endtime="20170925 22:14:32.069" starttime="20170925 22:14:32.038" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>2</arg>
 </arguments>
-<status endtime="20170922 11:54:58.031" starttime="20170922 11:54:58.031" status="PASS"></status>
+<status endtime="20170925 22:14:32.069" starttime="20170925 22:14:32.069" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -557,8 +2096,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.047">${m} = O</msg>
-<status endtime="20170922 11:54:58.047" starttime="20170922 11:54:58.047" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.084">${m} = O</msg>
+<status endtime="20170925 22:14:32.084" starttime="20170925 22:14:32.084" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -566,16 +2105,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.062" starttime="20170922 11:54:58.062" status="PASS"></status>
+<status endtime="20170925 22:14:32.100" starttime="20170925 22:14:32.084" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.062" starttime="20170922 11:54:58.031" status="PASS"></status>
+<status endtime="20170925 22:14:32.100" starttime="20170925 22:14:32.069" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>0</arg>
 <arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:58.086" starttime="20170922 11:54:58.079" status="PASS"></status>
+<status endtime="20170925 22:14:32.100" starttime="20170925 22:14:32.100" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -591,8 +2130,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.102">${m} = X</msg>
-<status endtime="20170922 11:54:58.102" starttime="20170922 11:54:58.086" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.116">${m} = X</msg>
+<status endtime="20170925 22:14:32.116" starttime="20170925 22:14:32.116" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -600,16 +2139,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.102" starttime="20170922 11:54:58.102" status="PASS"></status>
+<status endtime="20170925 22:14:32.131" starttime="20170925 22:14:32.116" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.117" starttime="20170922 11:54:58.086" status="PASS"></status>
+<status endtime="20170925 22:14:32.131" starttime="20170925 22:14:32.100" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>2</arg>
 <arg>1</arg>
 </arguments>
-<status endtime="20170922 11:54:58.117" starttime="20170922 11:54:58.117" status="PASS"></status>
+<status endtime="20170925 22:14:32.147" starttime="20170925 22:14:32.131" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -625,8 +2164,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.133">${m} = O</msg>
-<status endtime="20170922 11:54:58.133" starttime="20170922 11:54:58.133" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.147">${m} = O</msg>
+<status endtime="20170925 22:14:32.147" starttime="20170925 22:14:32.147" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -634,16 +2173,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.149" starttime="20170922 11:54:58.149" status="PASS"></status>
+<status endtime="20170925 22:14:32.163" starttime="20170925 22:14:32.163" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.149" starttime="20170922 11:54:58.117" status="PASS"></status>
+<status endtime="20170925 22:14:32.163" starttime="20170925 22:14:32.147" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>2</arg>
 </arguments>
-<status endtime="20170922 11:54:58.164" starttime="20170922 11:54:58.164" status="PASS"></status>
+<status endtime="20170925 22:14:32.178" starttime="20170925 22:14:32.163" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -659,8 +2198,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.180">${m} = X</msg>
-<status endtime="20170922 11:54:58.180" starttime="20170922 11:54:58.164" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.178">${m} = X</msg>
+<status endtime="20170925 22:14:32.194" starttime="20170925 22:14:32.178" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -668,16 +2207,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.196" starttime="20170922 11:54:58.180" status="PASS"></status>
+<status endtime="20170925 22:14:32.194" starttime="20170925 22:14:32.194" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.196" starttime="20170922 11:54:58.164" status="PASS"></status>
+<status endtime="20170925 22:14:32.194" starttime="20170925 22:14:32.178" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>0</arg>
 </arguments>
-<status endtime="20170922 11:54:58.196" starttime="20170922 11:54:58.196" status="PASS"></status>
+<status endtime="20170925 22:14:32.209" starttime="20170925 22:14:32.194" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -693,8 +2232,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.211">${m} = O</msg>
-<status endtime="20170922 11:54:58.211" starttime="20170922 11:54:58.211" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.209">${m} = O</msg>
+<status endtime="20170925 22:14:32.225" starttime="20170925 22:14:32.209" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -702,16 +2241,16 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.211" starttime="20170922 11:54:58.211" status="PASS"></status>
+<status endtime="20170925 22:14:32.225" starttime="20170925 22:14:32.225" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.227" starttime="20170922 11:54:58.196" status="PASS"></status>
+<status endtime="20170925 22:14:32.225" starttime="20170925 22:14:32.209" status="PASS"></status>
 </kw>
 <kw library="keywords.TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>2</arg>
 <arg>2</arg>
 </arguments>
-<status endtime="20170922 11:54:58.227" starttime="20170922 11:54:58.227" status="PASS"></status>
+<status endtime="20170925 22:14:32.225" starttime="20170925 22:14:32.225" status="PASS"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -727,8 +2266,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.242">${m} = X</msg>
-<status endtime="20170922 11:54:58.242" starttime="20170922 11:54:58.242" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.241">${m} = X</msg>
+<status endtime="20170925 22:14:32.241" starttime="20170925 22:14:32.241" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -736,9 +2275,9 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.242" starttime="20170922 11:54:58.242" status="PASS"></status>
+<status endtime="20170925 22:14:32.256" starttime="20170925 22:14:32.241" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.258" starttime="20170922 11:54:58.227" status="PASS"></status>
+<status endtime="20170925 22:14:32.256" starttime="20170925 22:14:32.241" status="PASS"></status>
 </kw>
 <kw name="Winner Should Be">
 <arguments>
@@ -748,8 +2287,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg level="INFO" timestamp="20170922 11:54:58.258">${m} = TIE</msg>
-<status endtime="20170922 11:54:58.258" starttime="20170922 11:54:58.258" status="PASS"></status>
+<msg level="INFO" timestamp="20170925 22:14:32.272">${m} = TIE</msg>
+<status endtime="20170925 22:14:32.272" starttime="20170925 22:14:32.256" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -757,26 +2296,27 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<status endtime="20170922 11:54:58.274" starttime="20170922 11:54:58.274" status="PASS"></status>
+<status endtime="20170925 22:14:32.272" starttime="20170925 22:14:32.272" status="PASS"></status>
 </kw>
-<status endtime="20170922 11:54:58.274" starttime="20170922 11:54:58.258" status="PASS"></status>
+<status endtime="20170925 22:14:32.272" starttime="20170925 22:14:32.256" status="PASS"></status>
 </kw>
-<status critical="yes" endtime="20170922 11:54:58.289" starttime="20170922 11:54:57.859" status="PASS"></status>
+<status critical="yes" endtime="20170925 22:14:32.272" starttime="20170925 22:14:31.928" status="PASS"></status>
 </test>
-<status endtime="20170922 11:54:58.289" starttime="20170922 11:54:57.047" status="PASS"></status>
+<status endtime="20170925 22:14:32.288" starttime="20170925 22:14:31.366" status="PASS"></status>
 </suite>
-<status endtime="20170922 11:54:58.336" starttime="20170922 11:54:56.422" status="PASS"></status>
+<status endtime="20170925 22:14:32.319" starttime="20170925 22:14:19.093" status="PASS"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0">Critical Tests</stat>
-<stat pass="3" fail="0">All Tests</stat>
+<stat pass="6" fail="0">Critical Tests</stat>
+<stat pass="6" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" name="Acceptancetest" id="s1">Acceptancetest</stat>
-<stat pass="3" fail="0" name="TicTacToeTests" id="s1-s1">Acceptancetest.TicTacToeTests</stat>
+<stat pass="6" fail="0" name="Acceptancetest" id="s1">Acceptancetest</stat>
+<stat pass="3" fail="0" name="TicTacToeGUITests" id="s1-s1">Acceptancetest.TicTacToeGUITests</stat>
+<stat pass="3" fail="0" name="TicTacToeTests" id="s1-s2">Acceptancetest.TicTacToeTests</stat>
 </suite>
 </statistics>
 <errors>
