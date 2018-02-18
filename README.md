@@ -1,6 +1,6 @@
 # Tic Tac Toe
 ## Introduction
-Hello, and welcome to Tic Tac Toe! This simple game was written in Java for my Software Engineering I class, or CS 310.
+Hello, and welcome to Tic Tac Toe! This simple game was written in Java and built with Gradle for my Software Engineering I class, or CS 310.
 ## Installation
 To install Tic Tac Toe, you will need to click 'Clone or download', then 'Download ZIP'. Find the ZIP folder in your computer's Downloads folder, then unzip it to a location you will keep track of. To run Tic Tac Toe, you will need to find the .jar file in build > libs > cs310-tic-tac-toe-2.0.jar. Once you have found this file, you may double-click it to execute the program.
 ## Objective and Instructions
